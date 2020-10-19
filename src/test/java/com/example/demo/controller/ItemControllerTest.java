@@ -8,11 +8,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static com.example.demo.TestUtils.createItem;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
@@ -21,6 +21,7 @@ import static org.mockito.Mockito.when;
 public class ItemControllerTest {
 
     private ItemController itemController;
+
     private final ItemRepository itemRepository = mock(ItemRepository.class);
 
     @Before
@@ -65,12 +66,4 @@ public class ItemControllerTest {
         assertEquals(items, response.getBody());
     }
 
-    private Item createItem(){
-        Item item = new Item();
-        item.setId(1L);
-        item.setName("Created Item");
-        item.setDescription("This is created item");
-        item.setPrice(BigDecimal.valueOf(10.0));
-        return item;
-    }
 }

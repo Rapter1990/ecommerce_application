@@ -2,8 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.TestUtils;
 import com.example.demo.controllers.UserController;
-import com.example.demo.model.persistence.Cart;
-import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
@@ -13,10 +11,9 @@ import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Optional;
 
+import static com.example.demo.TestUtils.createUser;
 import static org.mockito.Mockito.mock;
 
 import static org.junit.Assert.*;
@@ -102,22 +99,4 @@ public class UserControllerTest {
         assertEquals(404, response.getStatusCodeValue());
     }
 
-    private Cart emptyCart(){
-        Cart cart = new Cart();
-        cart.setId(1L);
-        cart.setUser(null);
-        cart.setItems(new ArrayList<Item>());
-        cart.setTotal(BigDecimal.valueOf(0.0));
-        return cart;
-    }
-
-    private User createUser(){
-        User user = new User();
-        user.setId(1);
-        user.setUsername("Username");
-        user.setPassword("Password");
-        user.setCart(emptyCart());
-
-        return user;
-    }
 }
