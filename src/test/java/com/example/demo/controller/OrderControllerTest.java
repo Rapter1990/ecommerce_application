@@ -123,27 +123,5 @@ public class OrderControllerTest {
     @Test
     public void ordersByUserNullUser(){
 
-        User user = createUser();
-        Item item = createItem();
-        Cart cart = user.getCart();
-
-        List<Item> itemList = new ArrayList<>();
-        itemList.add(item);
-        cart.setItems(itemList);
-
-        cart.setUser(user);
-        user.setCart(cart);
-
-        when(userRepository.findByUsername("Username")).thenReturn(null);
-
-        orderController.submit("Username");
-
-        ResponseEntity<List<UserOrder>> responseEntity = orderController.getOrdersForUser("Username");
-
-        assertNotNull(responseEntity);
-        assertEquals(200, responseEntity.getStatusCodeValue());
-        List<UserOrder> userOrders = responseEntity.getBody();
-        assertNotNull(userOrders);
-        assertEquals(0, userOrders.size());
     }
 }
