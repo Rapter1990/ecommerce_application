@@ -84,7 +84,7 @@ public class OrderControllerTest {
         ResponseEntity<UserOrder> response =  orderController.submit("Username");
 
         assertNotNull(response);
-        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(404, response.getStatusCodeValue());
 
         UserOrder retrievedUserOrder = response.getBody();
         assertNotNull(retrievedUserOrder);
@@ -141,7 +141,7 @@ public class OrderControllerTest {
         ResponseEntity<List<UserOrder>> responseEntity = orderController.getOrdersForUser("Username");
 
         assertNotNull(responseEntity);
-        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertEquals(404, responseEntity.getStatusCodeValue());
         List<UserOrder> userOrders = responseEntity.getBody();
         assertNotNull(userOrders);
         assertEquals(0, userOrders.size());
