@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import static com.example.demo.TestUtils.*;
@@ -76,19 +77,19 @@ public class CartControllerTest {
         ModifyCartRequest modifyCartRequest = createModifyCartRequest("Username", 1, 1);
         ResponseEntity<Cart> responseEntity = cartController.addTocart(modifyCartRequest);
 
-        cart.addItem(item);
-
-        BigDecimal itemPrice = item.getPrice();
-
-        BigDecimal expectTotal = itemPrice.multiply(BigDecimal.valueOf(modifyCartRequest.getQuantity())).add(cart.getTotal());
-
         assertNotNull(responseEntity);
         assertEquals(200, responseEntity.getStatusCodeValue());
 
-        assertEquals("Username", cart.getUser().getUsername());
-        assertEquals(1, cart.getItems().get(0));
-        assertEquals(expectTotal, cart.getTotal());
-        verify(cartRepository, times(1)).save(cart);
+        Cart responseCart = responseEntity.getBody();
+
+        assertNotNull(responseCart);
+
+        List<Item> items = responseCart.getItems();
+        assertNotNull(items);
+
+        assertEquals("Username", responseCart.getUser().getUsername());
+
+        verify(cartRepository, times(1)).save(responseCart);
     }
 
     @Test
@@ -130,12 +131,18 @@ public class CartControllerTest {
         ModifyCartRequest modifyCartRequest = createModifyCartRequest("Username", 1, 1);
         ResponseEntity<Cart> responseEntity = cartController.removeFromcart(modifyCartRequest);
 
-        cart.removeItem(item);
-
         assertNotNull(responseEntity);
         assertEquals(200, responseEntity.getStatusCodeValue());
 
-        assertEquals("Username", cart.getUser().getUsername());
-        verify(cartRepository, times(1)).save(cart);
+        Cart responseCart = responseEntity.getBody();
+
+        assertNotNull(responseCart);
+        List<Item> items = responseCart.getItems();
+        assertNotNull(items);
+        assertEquals(0, items.size());
+        assertEquals("Username", responseCart.getUser().getUsername());
+
+        verify(cartRepository, times(1)).save(responseCart);
+
     }
 }
