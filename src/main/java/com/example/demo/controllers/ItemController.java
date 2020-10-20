@@ -32,7 +32,7 @@ public class ItemController {
 	@GetMapping
 	public ResponseEntity<List<Item>> getItems() {
 
-		log.info(infoMarker,"ItemController | getItems | ");
+		log.info(infoMarker,"ItemController | getItems |");
 
 		return ResponseEntity.ok(itemRepository.findAll());
 	}

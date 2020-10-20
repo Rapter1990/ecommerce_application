@@ -49,14 +49,14 @@ public class CartController {
 		User user = userRepository.findByUsername(request.getUsername());
 		if(user == null) {
 
-			log.error(errorMarker,"CartController | addTocart | No User with Username : " + user.getUsername());
+			//log.error(errorMarker,"CartController | addTocart | No User with Username : " + user.getUsername());
 
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Optional<Item> item = itemRepository.findById(request.getItemId());
 		if(!item.isPresent()) {
 
-			log.error(errorMarker,"CartController | addTocart | No item found by id : " + request.getItemId());
+			//log.error(errorMarker,"CartController | addTocart | No item found by id : " + request.getItemId());
 
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
@@ -77,14 +77,14 @@ public class CartController {
 		User user = userRepository.findByUsername(request.getUsername());
 		if(user == null) {
 
-			log.error(errorMarker,"CartController | removeFromcart | No User with Username : " + user.getUsername());
+			//log.error(errorMarker,"CartController | removeFromcart | No User with Username : " + user.getUsername());
 
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Optional<Item> item = itemRepository.findById(request.getItemId());
 		if(!item.isPresent()) {
 
-			log.error("CartController | removeFromcart | No item found by id :  " + user.getUsername());
+			//log.error("CartController | removeFromcart | No item found by id :  " + user.getUsername());
 
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
