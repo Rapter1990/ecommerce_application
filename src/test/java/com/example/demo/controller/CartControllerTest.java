@@ -13,7 +13,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,6 +69,9 @@ public class CartControllerTest {
         User user = createUser();
         Item item = createItem();
         Cart cart = user.getCart();
+        cart.addItem(item);
+        cart.setUser(user);
+        user.setCart(cart);
 
         when(userRepository.findByUsername("Username")).thenReturn(user);
         when(itemRepository.findById(1L)).thenReturn(Optional.of(item));
@@ -123,6 +125,7 @@ public class CartControllerTest {
         Item item = createItem();
         Cart cart = user.getCart();
         cart.addItem(item);
+        cart.setUser(user);
         user.setCart(cart);
 
         when(userRepository.findByUsername("Username")).thenReturn(user);
