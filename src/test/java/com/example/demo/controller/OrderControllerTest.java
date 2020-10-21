@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.TestUtils;
-import com.example.demo.controllers.CartController;
 import com.example.demo.controllers.OrderController;
 import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.Item;
@@ -72,12 +71,14 @@ public class OrderControllerTest {
         Item item = createItem();
         Cart cart = user.getCart();
 
+        cart.setUser(user);
+        user.setCart(cart);
+
         List<Item> itemList = new ArrayList<>();
         itemList.add(item);
         cart.setItems(itemList);
 
-        cart.setUser(user);
-        user.setCart(cart);
+
 
         when(userRepository.findByUsername("Username")).thenReturn(null);
 
@@ -121,12 +122,13 @@ public class OrderControllerTest {
         Item item = createItem();
         Cart cart = user.getCart();
 
+        cart.setUser(user);
+        user.setCart(cart);
+
         List<Item> itemList = new ArrayList<>();
         itemList.add(item);
         cart.setItems(itemList);
 
-        cart.setUser(user);
-        user.setCart(cart);
 
         when(userRepository.findByUsername("Username")).thenReturn(null);
 
