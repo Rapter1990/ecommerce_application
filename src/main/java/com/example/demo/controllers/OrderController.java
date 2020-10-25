@@ -50,7 +50,7 @@ public class OrderController {
 
 		if(user == null) {
 
-			//log.error(errorMarker,"OrderController | submit | No User with username : " + user.getUsername());
+			log.error(errorMarker,"OrderController | submit | No User with username : " + user.getUsername());
 
 			return ResponseEntity.notFound().build();
 		}
@@ -70,7 +70,7 @@ public class OrderController {
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
 
-			//log.error(errorMarker,"OrderController | getOrdersForUser | No User with username : " + user.getUsername());
+			log.error(errorMarker,"OrderController | getOrdersForUser | No User with username : " + user.getUsername());
 
 			return ResponseEntity.notFound().build();
 		}
