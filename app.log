@@ -1,0 +1,38 @@
+2020-10-25 21:35:48.752  INFO 20832 --- [main] com.example.demo.SareetaApplication      : Starting SareetaApplication on DESKTOP-0IP4BBC with PID 20832 (started by Noyan in C:\Users\Noyan\Desktop\java web developer nanodegree\P04-eCommerce Application\starter_code)
+2020-10-25 21:35:48.755  INFO 20832 --- [main] com.example.demo.SareetaApplication      : No active profile set, falling back to default profiles: default
+2020-10-25 21:35:49.431  INFO 20832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-25 21:35:49.581  INFO 20832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142ms. Found 4 repository interfaces.
+2020-10-25 21:35:50.153  INFO 20832 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a626158e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-25 21:35:50.444  INFO 20832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-10-25 21:35:50.471  INFO 20832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-25 21:35:50.472  INFO 20832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-10-25 21:35:50.637  INFO 20832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-25 21:35:50.638  INFO 20832 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1808 ms
+2020-10-25 21:35:50.814  INFO 20832 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-25 21:35:50.936  INFO 20832 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-25 21:35:50.992  INFO 20832 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-10-25 21:35:51.084  INFO 20832 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-10-25 21:35:51.086  INFO 20832 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-10-25 21:35:51.251  INFO 20832 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-10-25 21:35:51.426  INFO 20832 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-25 21:35:52.148  INFO 20832 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-25 21:35:52.682  WARN 20832 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-25 21:35:52.750  INFO 20832 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dbca149, org.springframework.security.web.context.SecurityContextPersistenceFilter@129c760d, org.springframework.security.web.header.HeaderWriterFilter@85c3522, org.springframework.web.filter.CorsFilter@68550d86, org.springframework.security.web.authentication.logout.LogoutFilter@234ce7ff, com.example.demo.security.JWTAuthenticationFilter@19d9ba89, com.example.demo.security.JWTAuthenticationVerificationFilter@484876a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@180f33b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fa9247b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20163008, org.springframework.security.web.session.SessionManagementFilter@12c78f36, org.springframework.security.web.access.ExceptionTranslationFilter@72a0a60d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10f10230]
+2020-10-25 21:35:52.852  INFO 20832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-25 21:35:52.999  INFO 20832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-10-25 21:35:53.003  INFO 20832 --- [main] com.example.demo.SareetaApplication      : Started SareetaApplication in 4.736 seconds (JVM running for 5.631)
+2020-10-25 21:36:41.906  INFO 20832 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-25 21:36:41.907  INFO 20832 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-25 21:36:41.915  INFO 20832 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-10-25 21:36:42.019  INFO 20832 --- [http-nio-8081-exec-1] c.e.demo.controllers.UserController      : UserController | createUser | Username : User2
+2020-10-25 21:36:42.201  INFO 20832 --- [http-nio-8081-exec-1] c.e.demo.controllers.UserController      : UserController | createUser | Created user with username, User2. 
+2020-10-25 21:37:06.538  INFO 20832 --- [http-nio-8081-exec-3] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-10-25 21:37:06.650  INFO 20832 --- [http-nio-8081-exec-3] c.e.demo.controllers.UserController      : UserController | findByUserName | Found user with username User2
+2020-10-25 21:37:16.532  INFO 20832 --- [http-nio-8081-exec-4] c.e.demo.controllers.UserController      : UserController | findById | id : 1
+2020-10-25 21:38:12.674  INFO 20832 --- [http-nio-8081-exec-6] c.e.demo.controllers.CartController      : CartController | addTocart | item added by its id : 2 to the cart for the user User2
+2020-10-25 21:38:31.778  INFO 20832 --- [http-nio-8081-exec-7] c.e.demo.controllers.OrderController     : OrderController | submit | Searching username : User2
+2020-10-25 21:38:31.789  INFO 20832 --- [http-nio-8081-exec-7] c.e.demo.controllers.OrderController     : OrderController | submit | Order submitted from user with username : User2
+2020-10-25 21:38:52.282  INFO 20832 --- [http-nio-8081-exec-8] c.e.demo.controllers.OrderController     : OrderController | getOrdersForUser | Searching username : User2
+2020-10-25 21:38:52.285  INFO 20832 --- [http-nio-8081-exec-8] c.e.demo.controllers.OrderController     : OrderController | getOrdersForUser | Order listed from user with username : User2
